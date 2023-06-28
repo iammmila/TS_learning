@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-
-function ListGroup() {
-  const groups = ["slm", "slm1", "slm2"];
+interface Props {
+  onSelectGroup: (group: string) => void;
+}
+function ListGroup({ onSelectGroup }: Props) {
+  const groups = ["slm sifir", "slm bir", "slm iki"];
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <ul className="list-group">
@@ -13,7 +15,9 @@ function ListGroup() {
               : "list-group-item"
           }
           key={group}
-          onClick={() =>{ setSelectedIndex(index), console.log(group, index)}}
+          onClick={() => {
+            setSelectedIndex(index), onSelectGroup(group);
+          }}
         >
           {group}
         </li>
