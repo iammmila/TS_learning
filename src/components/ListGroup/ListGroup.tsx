@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import "./ListGroup.css";
+
 interface Props {
   onSelectGroup: (group: string) => void;
 }
+
 function ListGroup({ onSelectGroup }: Props) {
   const groups = ["slm sifir", "slm bir", "slm iki"];
   const [selectedIndex, setSelectedIndex] = useState(0);
