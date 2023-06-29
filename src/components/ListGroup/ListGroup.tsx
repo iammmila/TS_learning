@@ -1,5 +1,20 @@
 import React, { useState } from "react";
 import "./ListGroup.css";
+import styled from "styled-components";
+
+const List = styled.ul`
+  background-color: red;
+  color: white;
+`;
+
+const ListItem = styled.li<ListItemProps>`
+  margin: 10px;
+  background-color: ${(props) => (props.active ? "blue" : "pink")};
+`;
+
+interface ListItemProps {
+  active: boolean;
+}
 
 interface Props {
   onSelectGroup: (group: string) => void;
@@ -8,24 +23,21 @@ interface Props {
 function ListGroup({ onSelectGroup }: Props) {
   const groups = ["slm sifir", "slm bir", "slm iki"];
   const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
-    <ul className="list-group">
+    <List>
       {groups.map((group, index) => (
-        <li
-          className={
-            selectedIndex === index
-              ? "list-group-item active"
-              : "list-group-item"
-          }
+        <ListItem
+          active={index === selectedIndex}
           key={group}
           onClick={() => {
             setSelectedIndex(index), onSelectGroup(group);
           }}
         >
           {group}
-        </li>
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 }
 
