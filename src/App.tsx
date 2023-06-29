@@ -1,12 +1,10 @@
-import ListGroup from "./components/ListGroup";
+import "./App.css";
+import Button from "./components/Button";
 
 function App() {
-  const handleSelectItem = (group: string) => {
-    console.log(group);
-  };
   return (
     <>
-      <ListGroup onSelectGroup={handleSelectItem} />
+      <Button onClick={() => console.log("clicked")}>BUTTON</Button>
     </>
   );
 }
