@@ -1,19 +1,19 @@
-import { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Carts from "./components/Carts";
+import CartExercise from "./components/CartExercise";
+import Game from "./components/Game";
+import Pizza from "./components/Pizza";
 
 function App() {
-  const [cartItems, setCartItems] = useState(["pro 1", "pro 2"]);
-
-  const onClear = () => {
-    setCartItems([]);
-  };
   return (
     <>
-      <Navbar cartItemsCount={cartItems.length} />
-      <hr />
-      <Carts cartItems={cartItems} onClear={onClear} />
+      //exercise 1
+      <Game />
+      <br />
+      //exercise 2
+      <Pizza />
+      <br />
+      //exercise 3
+      <CartExercise />
     </>
   );
 }
