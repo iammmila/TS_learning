@@ -1,14 +1,15 @@
-import ListGroup from "./components/ListGroup";
 import "./App.css";
+import Like from "./components/Like";
 
 function App() {
-  const handleSelectItem = (group: string) => {
-    console.log(group);
+
+  const onClick = () => {
+    console.log("clicked");
   };
 
   return (
     <>
-      <ListGroup onSelectGroup={handleSelectItem} />
+      <Like onClick={onClick} />
     </>
   );
 }
