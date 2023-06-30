@@ -1,10 +1,10 @@
 import "./App.css";
-import Tags from "./components/Tags";
+import Bugs from "./components/Bugs";
 
 function App() {
   return (
     <>
-      <Tags />
+      <Bugs />
     </>
   );
 }
