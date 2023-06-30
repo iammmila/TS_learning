@@ -8,13 +8,10 @@ function App() {
   });
 
   const handleClick = () => {
-    //2.we can change object differently:
-    const newDrink = {
-      ...drink,
-      price: 6,
-    };
-    setDrink(newDrink);
-    console.log(newDrink);
+    //3.we can change object differently:
+
+    setDrink({ ...drink, price: 6 });
+    console.log(drink);
   };
 
   return (
