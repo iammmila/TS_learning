@@ -1,10 +1,10 @@
 import "./App.css";
-import Customer from "./components/Customer";
+import Tags from "./components/Tags";
 
 function App() {
   return (
     <>
-      <Customer />
+      <Tags />
     </>
   );
 }
