@@ -8,9 +8,9 @@ function App() {
   });
 
   const handleClick = () => {
-    //1.we can change object differently:
+    //2.we can change object differently:
     const newDrink = {
-      title: drink.title,
+      ...drink,
       price: 6,
     };
     setDrink(newDrink);
