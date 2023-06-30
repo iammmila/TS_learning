@@ -1,15 +1,9 @@
 import "./App.css";
-import Like from "./components/Like";
-
+import Message from "./components/Message";
 function App() {
-
-  const onClick = () => {
-    console.log("clicked");
-  };
-
   return (
     <>
-      <Like onClick={onClick} />
+      <Message />
     </>
   );
 }
