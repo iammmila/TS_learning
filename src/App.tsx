@@ -1,44 +1,25 @@
 import "./App.css";
-import ExpenseList from "./components/Expense-tracker/ExpenseList";
-import { useState } from "react";
-import ExpenseFilter from "./components/Expense-tracker/ExpenseFilter/index";
-import ExpenseForm from "./components/Expense-tracker/ExpenseForm";
-import categories from "./components/Expense-tracker/categories";
+import { useState, useEffect } from "react";
+import ProductList from "./components/ProductList";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [expenses, setExpenses] = useState([
-    { id: 1, description: "a", amount: 11, category: "Utilities" },
-    { id: 2, description: "bb", amount: 12, category: "Entertainment" },
-    { id: 3, description: "ccc", amount: 13, category: "Groceries" },
-    { id: 4, description: "dddd", amount: 14, category: "Utilities" },
-  ]);
-
-  const handleDelete = (id: number) => {
-    setExpenses(expenses.filter((e) => e.id !== id));
-  };
-  const visibleExpenses = selectedCategory
-    ? expenses.filter((e) => e.category === selectedCategory)
-    : expenses;
+  const [category, setCategory] = useState("");
+  //afteRender
+  useEffect(() => {
+    //side effect
+  });
 
   return (
     <>
-      <div className="mb-3">
-        <ExpenseForm
-          onSubmit={(expense) =>
-            setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
-          }
-        />
-      </div>
-      <div className="mb-3">
-        <ExpenseFilter
-          onSelectCategory={(category) => setSelectedCategory(category)}
-        />
-      </div>
-      <ExpenseList
-        expenses={visibleExpenses}
-        onDelete={(id) => handleDelete(id)}
-      />
+      <select
+        className="form-select"
+        onChange={(event) => setCategory(event.target.value)}
+      >
+        <option value=""></option>
+        <option value="Clothing">Clothing</option>
+        <option value="Household">Household</option>
+      </select>
+      <ProductList category={category} />
     </>
   );
 }
